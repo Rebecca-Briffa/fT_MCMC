@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.h5
+chains/
+log_probabilities/
+chi2/
+*_chain.txt
+*_log_prob.txt
+data/Pantheon+SH0ES.dat
+data/Pantheon+SH0ES_STAT+SYS.cov
+data/Pantheon+SH0ES_STATONLY.cov
