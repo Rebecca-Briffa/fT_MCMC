@@ -1,8 +1,4 @@
-Copy these files from
-
-`G:\My Drive\Projects\7.Constaining f(T) cosmology using RSD data\Final_Code\PLM\Data\`
-
-into this folder (keep the same names):
+Place these survey files in this folder (keep the same names):
 
 - `H_CCnoH0.dat`
 - `Pantheon+SH0ES.dat`

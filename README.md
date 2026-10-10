@@ -1,10 +1,8 @@
 # Constraining \(f(T)\) cosmology with RSD
 
+Used in R. Briffa, C. Escamilla-Rivera, J. Levi Said, and J. Mifsud, *Growth of structures using redshift space distortion in \(f(T)\) cosmology*, Mon. Not. R. Astron. Soc. **528**, 2711 (2024), [arXiv:2310.09159](https://arxiv.org/abs/2310.09159).
+
 Public copy of the late-time MCMC used to constrain teleparallel \(f(T)\) models, and ΛCDM, with cosmic chronometers, Pantheon+SH0ES, BAO, and redshift-space distortions (\(f\sigma_8\)).
-
-The likelihoods are the ones from
-
-`G:\My Drive\Projects\7.Constaining f(T) cosmology using RSD data\Final_Code\`
 
 Each model keeps its own solver, growth equation, and likelihood. \(\chi^2\) uses the same surveys. \(H(z)\) and \(r_s\) come from that model’s `solver.py` / `util.py`. ΛCDM has no extra \(f(T)\) parameter.
 
@@ -51,4 +49,8 @@ The Drive code did `sort_values("z")` and then `self.fs8[index]` inside `enumera
 
 ## Citation
 
-Cite the papers that used this pipeline if you use the code. The survey files remain the property of those collaborations.
+If you use this code, please cite
+
+R. Briffa, C. Escamilla-Rivera, J. Levi Said, and J. Mifsud, *Growth of structures using redshift space distortion in \(f(T)\) cosmology*, Mon. Not. R. Astron. Soc. **528**, 2711 (2024), [arXiv:2310.09159](https://arxiv.org/abs/2310.09159), [doi:10.1093/mnras/stae103](https://doi.org/10.1093/mnras/stae103).
+
+The survey files remain the property of those collaborations.
