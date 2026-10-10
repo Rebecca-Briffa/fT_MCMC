@@ -39,14 +39,6 @@ Each `log_probability` builds \(H(z)\) on a redshift grid, integrates the comovi
 
 ΛCDM uses the combined RSD+BAO vector (`RSD_BAO_data.txt` with `fs8_RSD_cov_tot.txt`) instead of the separate \(f\sigma_8\) table.
 
-## Two checks on the original likelihood
-
-**\(f\sigma_8\) / WiggleZ.** `fs8_cov_tot.txt` is in the same row order as `f_sigma8_updated.csv`, not in redshift order. The only large off-diagonal block sits on the three consecutive WiggleZ rows \(z = 0.44,\ 0.60,\ 0.73\).
-
-The Drive code did `sort_values("z")` and then `self.fs8[index]` inside `enumerate`. On a pandas Series that lookup is by label, so `self.fs8[0]` is the original first row, not the lowest redshift. In this file that accident puts the residual back in CSV order, which is the covariance order, so the saved \(\chi^2\) is not the scrambled one. Taking `.values` after the sort would pair those WiggleZ rows with the wrong covariance entries and can drive \(f\sigma_8\) \(\chi^2\) too low. The likelihood now stores the three columns with `.to_numpy()` and does not sort.
-
-**Pantheon+SH0ES calibrators.** Hubble-flow supernovae enter at \(z_{\mathrm{HD}} > 0.01\). Cepheid hosts (`IS_CALIBRATOR`) are kept at any redshift, and \(M\) is set by `CEPH_DIST` on those rows. The same mask is applied to the covariance. A cut \(z_{\mathrm{HD}} > 0.01\) on the whole catalog would drop most hosts, because they sit below \(0.01\), and \(M\) would no longer be anchored.
-
 ## Citation
 
 If you use this code, please cite
